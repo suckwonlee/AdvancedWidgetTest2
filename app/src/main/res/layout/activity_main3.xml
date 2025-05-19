@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -10,34 +10,44 @@
         android:textSize="30sp"
         android:gravity="center"
         android:layout_marginTop="50sp"/>
+
     <SlidingDrawer
+        android:id="@+id/sliding_drawer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:handle="@+id/btn_handle"
         android:content="@+id/linear_content">
+
+        <!-- 1) 손잡이 뷰 (첫 번째 자식) -->
         <Button
             android:id="@+id/btn_handle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="손잡이"/>
+
+        <!-- 2) 컨텐츠 뷰 (두 번째 자식) -->
         <LinearLayout
             android:id="@+id/linear_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:orientation="vertical"
-            android:background="#FF00FF"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="빨간 드래곤"
-            android:textSize="20sp"
-            android:layout_marginBottom="20dp"
-            android:textColor="@color/white"/>
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:src="@drawable/red"/>
+            android:gravity="center"
+            android:background="#FF00FF">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="빨간 드래곤"
+                android:textSize="20sp"
+                android:layout_marginBottom="20dp"
+                android:textColor="@android:color/white"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/red"/>
+
+        </LinearLayout>
     </SlidingDrawer>
 </LinearLayout>
